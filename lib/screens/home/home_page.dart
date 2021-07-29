@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:layout_pokedex/models/pokemon.dart';
 import 'package:layout_pokedex/screens/widgets/description.dart';
 import 'package:layout_pokedex/screens/widgets/details.dart';
+import 'package:layout_pokedex/screens/widgets/weekness.dart';
 import 'package:layout_pokedex/style.dart';
 
 class HomePage extends StatelessWidget {
@@ -45,7 +46,8 @@ class HomePage extends StatelessWidget {
               )
             ),
             Description(pokemon),
-            Details(pokemon)
+            Details(pokemon),
+            Weekness()
           ],
         ),
       ),
