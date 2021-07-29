@@ -1,16 +1,39 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'package:layout_pokedex/models/pokemon.dart';
+import 'package:layout_pokedex/screens/widgets/attributes.dart';
 import 'package:layout_pokedex/style.dart';
 
 class Details extends StatelessWidget {
+  // final Pokemon pokemonHeight;
+  // final Pokemon pokemonWeight;
+  // final Pokemon pokemonHability;
+  // final Pokemon pokemonType;
+  
+  // const Details({
+  //   required this.pokemonHeight,
+  //   required this.pokemonWeight,
+  //   required this.pokemonHability,
+  //   required this.pokemonType,
+  // });
+
+  final Pokemon _pokemon;
+  Details(this._pokemon);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 20
       ),
-      child: Container( //Arredondar as bordas do container
-        color: lightBlueTheme,
+      child: Container(
+        decoration: new BoxDecoration(
+          color: lightBlueTheme,
+          borderRadius: BorderRadius.all(
+            Radius.circular(5)
+          )
+        ),
         width: MediaQuery.of(context).size.width,
 
         child: Padding(
@@ -32,7 +55,7 @@ class Details extends StatelessWidget {
                         height: 8,
                       ),
                       Text(
-                        "0.6 m",
+                        "${this._pokemon.pokemonHeight} m",
                         style: TextStyle(
                           fontWeight: FontWeight.bold
                         )
@@ -54,11 +77,10 @@ class Details extends StatelessWidget {
                       SizedBox(
                         height: 8
                       ),
-                      Text( //Criar widget para os tipos de pokemon
-                        "Fogo",
-                        style: TextStyle(
-                          color: Colors.white
-                        ),
+                       //Criar widget para os tipos de pokemon
+                      Attributes(
+                        attribute: this._pokemon.pokemonType,
+                        typeColor: orangeTheme,
                       ),
                     ],
                   ),  
@@ -79,7 +101,7 @@ class Details extends StatelessWidget {
                         height: 8
                       ),
                       Text(
-                        "8.5 kg",
+                        "${this._pokemon.pokemonWeight} kg",
                         style: TextStyle(
                           fontWeight: FontWeight.bold 
                         ),
@@ -102,7 +124,7 @@ class Details extends StatelessWidget {
                         height: 8,
                       ),
                       Text(
-                        "Chama",
+                        "${this._pokemon.pokemonHability}",
                         style: TextStyle(
                           fontWeight: FontWeight.bold
                         ),

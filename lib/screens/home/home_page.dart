@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
               )
             ),
             Description(pokemon),
-            Details()
+            Details(pokemon)
           ],
         ),
       ),
