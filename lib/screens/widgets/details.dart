@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:layout_pokedex/models/pokemon.dart';
-import 'package:layout_pokedex/screens/widgets/attributes.dart';
 import 'package:layout_pokedex/screens/widgets/individual_informatios.dart';
 import 'package:layout_pokedex/style.dart';
 
