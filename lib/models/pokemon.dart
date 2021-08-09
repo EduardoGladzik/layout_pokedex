@@ -6,7 +6,8 @@ class Pokemon {
   final List<String> pokemonHability;
   final double pokemonWeight;
   final List<String> pokemonWeekness;
-  
+  final String category;
+
   Pokemon({
     required this.pokemonPhoto,
     required this.pokemonDescription,
@@ -15,5 +16,6 @@ class Pokemon {
     required this.pokemonHability,
     required this.pokemonWeight,
     required this.pokemonWeekness,
+    required this.category,
   });
 }

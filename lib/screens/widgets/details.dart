@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:layout_pokedex/models/pokemon.dart';
 import 'package:layout_pokedex/screens/widgets/attributes.dart';
-import 'package:layout_pokedex/screens/widgets/gradient_attributes.dart';
+import 'package:layout_pokedex/screens/widgets/individual_informatios.dart';
 import 'package:layout_pokedex/style.dart';
 
 class Details extends StatelessWidget {
@@ -20,13 +20,13 @@ class Details extends StatelessWidget {
         decoration: new BoxDecoration(
           color: lightBlueTheme,
           borderRadius: BorderRadius.all(
-            Radius.circular(5)
+            Radius.circular(8)
           )
         ),
         width: MediaQuery.of(context).size.width,
 
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -34,95 +34,43 @@ class Details extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Text("Altura",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22
-                        )
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        "${this._pokemon.pokemonHeight} m",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
-                        )
-                      ),
+                      IndividualInformations(
+                        feature: "Height",
+                        answer: "${this._pokemon.pokemonHeight} m",
+                      )
                     ],
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 30,
                   ),
                   Column(
                     children: [
-                      Text(
-                        "Tipo",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22
-                        ),
-                      ),
-                      SizedBox(
-                        height: 8
-                      ),
-                      Row(
-                        children: [
-                          Attributes(
-                            attribute: this._pokemon.pokemonType[0],
-                            attributeColor: grassTypeColor,
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                        ]
+                      IndividualInformations(
+                        feature: "Weight",
+                        answer: "${this._pokemon.pokemonWeight} kg",
                       )
-                    ],
-                  ),  
+                    ]
+                  )
                 ],
-              ),
+              ),  
               Column(
                 children: [
                   Column(
                     children: [
-                      Text(
-                        "Peso",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22
-                        )
-                      ),
-                      SizedBox(
-                        height: 8
-                      ),
-                      Text(
-                        "${this._pokemon.pokemonWeight} kg",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold 
-                        ),
+                      IndividualInformations(
+                        feature: "Category",
+                        answer: "${this._pokemon.category}",
                       )
                     ],
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 30,
                   ),
                   Column(
                     children: [
-                      Text(
-                        "Habilidade",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22
-                        )
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        "${this._pokemon.pokemonHability[0]}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold
-                        ),
+                      IndividualInformations(
+                        feature: "Abilities",
+                        answer: "${this._pokemon.pokemonHability[0]}",
                       )
                     ],
                   )
@@ -131,7 +79,7 @@ class Details extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    ); 
-  } 
+      )
+    );
+  }
 }

@@ -14,7 +14,8 @@ class HomePage extends StatelessWidget {
     pokemonType: ["Grass"],
     pokemonHability: ["Overgrow"],
     pokemonWeight: 21.6,
-    pokemonWeekness: ["Fire", "Flying", "Ice", "Poison", "Bug"]
+    pokemonWeekness: ["Fire", "Flying", "Ice", "Poison", "Bug"],
+    category: "Wood Gecko"
   );
 
   final String appBarTitle = "Grovyle #253";
