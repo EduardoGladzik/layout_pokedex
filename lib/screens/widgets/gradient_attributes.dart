@@ -1,20 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Attributes extends StatelessWidget {
+class GradientAttributes extends StatelessWidget {
   final String attribute;
-  final Color attributeColor;
+  final Gradient gradientAttributeColor;
   
-  const Attributes({
+  const GradientAttributes({
     required this.attribute,
-    required this.attributeColor,
+    required this.gradientAttributeColor,
   });
 
   @override
   Widget build(BuildContext context) {   
     return Container(
       decoration: new BoxDecoration(
-        color: this.attributeColor,
+        gradient: this.gradientAttributeColor,
         borderRadius: BorderRadius.circular(5)
       ),
       child: Padding(

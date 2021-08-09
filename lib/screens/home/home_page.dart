@@ -8,17 +8,16 @@ import 'package:layout_pokedex/style.dart';
 
 class HomePage extends StatelessWidget {
   final pokemon = Pokemon(
-    pokemonPhoto: "assets/images/charmander.png",
-    pokemonName: "Charmander #004",
-    pokemonDescription: "Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.",
-    pokemonHeight: 0.6,
-    pokemonType: "Fogo",
-    pokemonHability: "Chama",
-    pokemonWeight: 8.5,
-    pokemonWeekness: ["Água", "Terra", "Rocha"]
+    pokemonPhoto: "assets/images/grovyle.png",
+    pokemonDescription: "The leaves growing out of Grovyle’s body are convenient for camouflaging it from enemies in the forest. This Pokémon is a master at climbing trees in jungles.",
+    pokemonHeight: 0.9,
+    pokemonType: ["Grass"],
+    pokemonHability: ["Overgrow"],
+    pokemonWeight: 21.6,
+    pokemonWeekness: ["Fire", "Flying", "Ice", "Poison", "Bug"]
   );
 
-  final String appBarTitle = "Charmander #004";
+  final String appBarTitle = "Grovyle #253";
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class HomePage extends StatelessWidget {
         ),
         leading: Image.asset("assets/images/logo.png"),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           horizontal: 20
         ),
@@ -47,7 +46,7 @@ class HomePage extends StatelessWidget {
             ),
             Description(pokemon),
             Details(pokemon),
-            Weekness()
+            Weekness(pokemon)
           ],
         ),
       ),

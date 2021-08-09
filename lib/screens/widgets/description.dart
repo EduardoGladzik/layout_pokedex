@@ -10,7 +10,10 @@ class Description extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column (
       children: [
-        Text(this._pokemonObj.pokemonDescription, style: TextStyle(fontSize: 12))
+        Text(
+          this._pokemonObj.pokemonDescription,
+          textAlign: TextAlign.justify,
+        )
       ],
     );
   }

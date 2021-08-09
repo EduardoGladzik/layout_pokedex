@@ -1,8 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:layout_pokedex/models/pokemon.dart';
 import 'package:layout_pokedex/screens/widgets/attributes.dart';
+import 'package:layout_pokedex/screens/widgets/gradient_attributes.dart';
 import 'package:layout_pokedex/style.dart';
 
 class Weekness extends StatelessWidget {
+  final Pokemon _pokemon;
+
+  Weekness(this._pokemon);
   
   @override
   Widget build(BuildContext context) {
@@ -28,17 +33,25 @@ class Weekness extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Attributes(
-              attribute: "Água",
-              typeColor: blueTheme,
+              attribute: this._pokemon.pokemonWeekness[0],
+              attributeColor: fireTypeColor,
+            ),
+            GradientAttributes(
+              attribute: this._pokemon.pokemonWeekness[1],
+              gradientAttributeColor: flyingTypeColor
             ),
             Attributes(
-              attribute: "Terra",
-              typeColor: yellowTheme,
+              attribute: this._pokemon.pokemonWeekness[2],
+              attributeColor: iceTypeColor,
             ),
             Attributes(
-              attribute: "Rocha",
-              typeColor: darkYellowTheme,
-            )
+              attribute: this._pokemon.pokemonWeekness[3],
+              attributeColor: poisonTypeColor,
+            ),
+            Attributes(
+              attribute: this._pokemon.pokemonWeekness[4],
+              attributeColor: bugTypeColor,
+            ),
           ],
         ),
       ],

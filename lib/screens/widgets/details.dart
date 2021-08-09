@@ -3,21 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'package:layout_pokedex/models/pokemon.dart';
 import 'package:layout_pokedex/screens/widgets/attributes.dart';
+import 'package:layout_pokedex/screens/widgets/gradient_attributes.dart';
 import 'package:layout_pokedex/style.dart';
 
 class Details extends StatelessWidget {
-  // final Pokemon pokemonHeight;
-  // final Pokemon pokemonWeight;
-  // final Pokemon pokemonHability;
-  // final Pokemon pokemonType;
-  
-  // const Details({
-  //   required this.pokemonHeight,
-  //   required this.pokemonWeight,
-  //   required this.pokemonHability,
-  //   required this.pokemonType,
-  // });
-
   final Pokemon _pokemon;
   Details(this._pokemon);
 
@@ -37,7 +26,7 @@ class Details extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
 
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -77,11 +66,17 @@ class Details extends StatelessWidget {
                       SizedBox(
                         height: 8
                       ),
-                       //Criar widget para os tipos de pokemon
-                      Attributes(
-                        attribute: this._pokemon.pokemonType,
-                        typeColor: orangeTheme,
-                      ),
+                      Row(
+                        children: [
+                          Attributes(
+                            attribute: this._pokemon.pokemonType[0],
+                            attributeColor: grassTypeColor,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                        ]
+                      )
                     ],
                   ),  
                 ],
@@ -124,7 +119,7 @@ class Details extends StatelessWidget {
                         height: 8,
                       ),
                       Text(
-                        "${this._pokemon.pokemonHability}",
+                        "${this._pokemon.pokemonHability[0]}",
                         style: TextStyle(
                           fontWeight: FontWeight.bold
                         ),
